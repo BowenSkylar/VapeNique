@@ -1,7 +1,7 @@
 {
-  "name": "bobby-king-react-template",
+  "name": "vapenique",
   "version": "1.0.0",
-  "description": "React application template using webpack",
+  "description": "React application using webpack for a vape recipe organizer",
   "main": "server.js",
   "private": true,
   "scripts": {
@@ -13,15 +13,15 @@
     "watch": "webpack -d --progress --watch"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git@github.com:BowenSkylar/VapeNique.git"
   },
-  "author": "Bobby King",
-  "license": "SEE LICENSE IN LICENSE",
+  "author": "Skylar Bowen",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/gittheking/react_template/issues"
+    "url": "https://github.com/BowenSkylar/VapeNique/issues"
   },
-  "homepage": "https://github.com/gittheking/react_template#readme",
+  "homepage": "https://github.com/BowenSkylar/VapeNique#readme",
   "dependencies": {
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
