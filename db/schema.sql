@@ -12,11 +12,14 @@ CREATE TABLE vape_users(
 
 CREATE TABLE recipes(
   id SERIAL PRIMARY KEY,
+  belongs_to INT REFERENCES vape_users(user_id),
   recipe_name TEXT NOT NULL,
   nicotine INT NOT NULL,
   soft_deleted CHAR(1) CHECK (soft_deleted IN('1', '2')),
   size INT NOT NULL
   );
+-- 1 = no
+-- 2 = yes
 
 CREATE TABLE ingredients(
   id SERIAL PRIMARY KEY,

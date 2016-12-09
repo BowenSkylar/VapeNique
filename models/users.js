@@ -27,6 +27,7 @@ function authenticate(req, res, next) {
       } else {
         res.status(500).send('you not real');
       }
+      next();
     })
   .catch(error => console.log(error))
 }
