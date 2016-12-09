@@ -1,0 +1,8 @@
+BEGIN;
+
+INSERT INTO recipes( )
+VALUES (
+
+);
+
+COMMIT;
