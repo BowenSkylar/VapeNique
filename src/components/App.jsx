@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import './normalize.css';
 import style from './App.css';
 import Login from './Login/Login.jsx';
-import Signup from './Signup/Signup.jsx'
+import Signup from './Signup/Signup.jsx';
+import RecipeForm from './RecipeForm/RecipeForm.jsx'
 
 
 // create a React Component called _App_
@@ -22,6 +23,10 @@ class App extends Component {
       },
       currentToken: ''
     }
+  }
+
+  addIngredient(e){
+    console.log('add new ingredient')
   }
 
   trackSignupForm(e) {
@@ -97,20 +102,6 @@ class App extends Component {
     })
   }
 
-  testLogin() {
-    console.log(this.state.currentToken)
-    fetch('/api', {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `Bearer ` + this.state.currentToken
-      }
-    })
-    .then((data) => {
-      console.log(data)
-    })
-  }
-
   logout() {
     this.setState({
       currentToken: '',
@@ -124,6 +115,7 @@ class App extends Component {
         <header>
           <h1>Welcome to VapeNique</h1>
 
+
             <Signup
               trackSignupForm={this.trackSignupForm.bind(this)}
               postSignup={this.postSignup.bind(this)}
@@ -134,9 +126,12 @@ class App extends Component {
               postLogin={this.postLogin.bind(this)}
               logout={this.logout.bind(this)}
             />
-
-
         </header>
+
+            <RecipeForm
+              addIngredient={this.addIngredient.bind(this)}
+            />
+
         <div>
         </div>
 

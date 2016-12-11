@@ -18,14 +18,12 @@ CREATE TABLE recipes(
   soft_deleted CHAR(1) CHECK (soft_deleted IN('1', '2')),
   size INT NOT NULL
   );
--- 1 = no
--- 2 = yes
 
 CREATE TABLE ingredients(
   id SERIAL PRIMARY KEY,
   flavor TEXT NOT NULL,
   ref_id INT REFERENCES recipes(id),
-  measurements INT NOT NULL
+  measurements TEXT NOT NULL
   );
 
 COMMIT;

@@ -1,0 +1,29 @@
+input {
+  background: transparent;
+  border-top: transparent !important;
+  border-left: transparent !important;
+  border-right: transparent !important;
+  border-bottom: 2px solid !important;
+  font-weight: 200;
+  color: grey;
+  padding-left: 0;
+  box-shadow: none !important;
+  outline: none;
+  padding: 10px;
+}
+
+.recipeFormBox{
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  border: 5px solid #222;
+  width: 50vw;
+}
+
+.addFlavor {
+  border-radius: 30px;
+  border: transparent;
+  background-color: teal;
+  color: white;
+  margin-right: 15px;
+}

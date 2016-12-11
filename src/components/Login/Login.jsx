@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import style from './Login.css';
+
 
 class Login extends Component {
   render() {
@@ -6,8 +8,8 @@ class Login extends Component {
       <div>
         <input onChange={this.props.trackLoginForm} type="text" placeholder="username"/>
         <input onChange={this.props.trackLoginForm} type="text" placeholder="password"/>
-        <button onClick={this.props.postLogin}>Login</button>
-        <button onClick={this.props.logout}>Logout</button>
+        <button className="loginBtn" onClick={this.props.postLogin}>Login</button>
+        <button className="logoutBtn" onClick={this.props.logout}>Logout</button>
       </div>
     )
   }

@@ -1,0 +1,19 @@
+.logoutBtn, .loginBtn{
+  border-radius: 15px;
+  border: none;
+/*  outline: none;
+*/  padding: 10px;
+  padding-left:40px;
+  padding-right:40px;
+
+  margin: 5px;
+}
+/*
+.logoutBtn{
+  background-color: #cd3920;
+}
+
+.loginBtn{
+  background-color: green;
+}
+*/
