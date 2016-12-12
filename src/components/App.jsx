@@ -129,7 +129,7 @@ class App extends Component {
         </header>
 
             <RecipeForm
-              addIngredient={this.addIngredient.bind(this)}
+              ingredients={[]}
             />
 
         <div>

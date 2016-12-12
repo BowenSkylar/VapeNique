@@ -12,7 +12,7 @@ CREATE TABLE vape_users(
 
 CREATE TABLE recipes(
   id SERIAL PRIMARY KEY,
-  belongs_to INT REFERENCES vape_users(user_id),
+  user_id INT REFERENCES vape_users(user_id),
   recipe_name TEXT NOT NULL,
   nicotine INT NOT NULL,
   soft_deleted CHAR(1) CHECK (soft_deleted IN('1', '2')),
@@ -22,7 +22,7 @@ CREATE TABLE recipes(
 CREATE TABLE ingredients(
   id SERIAL PRIMARY KEY,
   flavor TEXT NOT NULL,
-  ref_id INT REFERENCES recipes(id),
+  recipe_id INT REFERENCES recipes(id),
   measurements TEXT NOT NULL
   );
 

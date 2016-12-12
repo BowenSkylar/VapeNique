@@ -2,6 +2,10 @@ const db = require('../db/db');
 
 
 
+// SELECT *FROM recipes
+//   INNER JOIN vape_users
+//     ON (recipes.belongs_to = vape_users.user_id);
+
 //link recipe to current password logged in? INNER JOIN?
 function getRecipes(req, res, next){
   db.any(`SELECT * from recipes WHERE belongs_to =$1;`)
