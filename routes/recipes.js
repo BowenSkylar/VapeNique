@@ -14,6 +14,6 @@ router.route('/')
   .put(softDeleteRecipe, (req, res) => res.sendStatus(204))
   .post(addRecipe, (req, res) => res.sendStatus(204))
   .get(getRecipes, (req, res) => res.json(res.rows))
-  // .delete(hardDeleteRecipe, (req, res) => res.sendStatus(204))
+  .delete(hardDeleteRecipe, (req, res) => res.sendStatus(204))
 
 module.exports = router;

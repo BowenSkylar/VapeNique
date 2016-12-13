@@ -27,7 +27,9 @@
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
-    "pg-promise": "^5.2.7"
+    "pg-promise": "^5.2.7",
+    "socket.io": "^1.7.1",
+    "socket.io-client": "^1.6.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
