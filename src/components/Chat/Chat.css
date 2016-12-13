@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.message-popup {
+  font: 13px Helvetica, Arial;
+  background-color: #f8f1db;
+  position: absolute;
+  right: 1vw;
+  bottom: 0;
+  z-index: 50;
+  display: none;
+/*  border: 2px solid tan;*/
+  position: fixed;
+  bottom: 2vh;
+  left: .5vw;
+  width: 80vw;
+  height: 28vh;
+  border-radius: 8px;
+
+}
+
+.message-header {
+  text-align: right;
+  padding-right: 1.2vw;
+  background-color:teal;
+  color: #FAFAFA;
+  font-size: 1vw;
+  font-weight: bold;
+  height: 3vh;
+  width: 80vw;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.message-header:hover {
+  cursor: pointer;
+}
+
+.socket-form {
+  position: absolute;
+  bottom: 0;
+  background: #222;
+  padding: 3px;
+  width: 80vw;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.socket-form input {
+  border: 0;
+  padding: 10px;
+  width: 65vw;
+  height: 5vh;
+  margin-right: .5%;
+}
+
+
+.socket-form button {
+  width: 4.8vw;
+  background-color: teal;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  float: left;
+  margin: 2px;
+}
+
+.socket-form button :hover {
+  background-color: #006767;
+
+}
+
+.screen {
+  background-color: #A9A49DFF;
+  width: 80vw;
+  height: 20vh;
+
+}
+
+
+#messages {
+  width: 80vw;
+  height: 28vh;
+  overflow: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
+  width: 80vw;
+  padding: 5px 10px;
+  background: #FFFFFF;
+}
+
+#messages li:nth-child(odd) {
+  width: 80vw;
+  background: #eee;
+}

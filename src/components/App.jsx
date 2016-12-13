@@ -5,6 +5,8 @@ import style from './App.css';
 import Login from './Login/Login.jsx';
 import Signup from './Signup/Signup.jsx';
 import RecipeForm from './RecipeForm/RecipeForm.jsx'
+import Chat from './Chat/Chat.jsx';
+
 
 
 // create a React Component called _App_
@@ -199,10 +201,23 @@ postRecipe() {
               updateNicotine={event => this.updateNicotine(event)}
             />
 
-        <div>
+     <div className="socket-container">
+          <Chat />
         </div>
 
+        <footer>
+        <div
+            id="open-chat"
+            onClick={() => {
+                      document.querySelector('.message-popup').style.display='block';
+                    }}
+          >
+          Open Flavor Chat!
+          </div>
+        </footer>
       </div>
+
+
 
 
     );

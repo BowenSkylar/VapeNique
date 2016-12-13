@@ -21,3 +21,49 @@ body{
     background-image: url(http://i.imgur.com/vEsU9Tp.png);
 
 }
+
+
+#open-chat {
+  margin-top: .3vh;
+  cursor: pointer;
+  font-size: 1vw;
+  position: fixed;
+  right: 1vw;
+  bottom:1vw;
+  padding: 1vh 1vw;
+  color: #FAFAFA;
+  border: transparent;
+  border-radius: 5px;
+  width: 16vw;
+  height: 4vh;
+  text-align: center;
+  background-color: teal;
+}
+
+#open-chat:hover{
+  background-color: #006767;
+}
+
+#open-chat:active{
+  animation: pulse .3s;
+  outline: none;
+}
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(.5, .5, .5);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}
+
+
