@@ -144,11 +144,11 @@ class App extends Component {
 //react function to fetch
 postRecipe(event) {
     console.log('add recipe post')
-    fetch('/db/vapenique', {
+    fetch('/db/recipes', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'Authorization': 'Bearer {this.state.currentToken}'
+        'Authorization': `Bearer ${this.state.currentToken}`
       },
       body: JSON.stringify({
         recipeName: this.state.userInput.recipeName,
@@ -204,7 +204,7 @@ postRecipe(event) {
             />
 
      <div className="socket-container">
-          <Chat />
+          <Chat username={this.state.loginForm.username}/>
         </div>
 
         <footer>

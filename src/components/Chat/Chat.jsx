@@ -15,7 +15,7 @@ export default class Chat extends Component {
       const ul = document.getElementById('messages');
       const li = document.createElement('li');
       // const username = document.querySelector('username');
-      li.innerHTML = msg.msg ;
+      li.innerHTML = `${this.props.username}: ${msg.msg}` ;
       ul.appendChild(li);
     });
   }
