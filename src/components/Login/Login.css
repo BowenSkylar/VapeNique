@@ -8,12 +8,9 @@
 
   margin: 5px;
 }
-/*
-.logoutBtn{
-  background-color: #cd3920;
+.loginBtn:hover{
+  background-color: #777;
 }
-
-.loginBtn{
-  background-color: green;
+.logoutBtn:hover{
+  background-color: #777;
 }
-*/

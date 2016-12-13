@@ -13,12 +13,18 @@ const PORT        = process.argv[2] || process.env.port || 3000;
 app.use(logger('dev'));
 
 app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/favicon.ico', '/user/login', '/user/signup']}));
+app.use(expressJWT({secret: process.env.SECRET}).unless({
+  path: ['/favicon.ico', '/user/login', '/user/signup', '/ingredients']
+}));
 
 const userRouter = require('./routes/users.js');
+const recipeRouter = require('./routes/recipes.js');
+const ingredientRouter = require('./routes/ingredients.js');
+
 app.use('/user', userRouter);
-// app.use('/api', apiRouter);
+app.use('/recipes', recipeRouter);
+app.use('/ingredients', ingredientRouter);
 
-
-app.listen(PORT, () => console.log('server here! listening on', PORT));
+app.listen(PORT, () => console.log('server here!! listening on', PORT));

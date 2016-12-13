@@ -13,6 +13,11 @@ class App extends Component {
     super();
 
     this.state = {
+    userInput: {
+      recipeName: '',
+      size: '',
+      nicotine: ''
+    },
       signupForm: {
         username: '',
         password: ''
@@ -24,6 +29,37 @@ class App extends Component {
       currentToken: ''
     }
   }
+   updateRecipeName(e){
+    this.setState({
+      userInput: {
+        recipeName: e.target.value,
+        size: this.state.userInput.size,
+        nicotine: this.state.userInput.nicotine
+      }
+    })
+  }
+
+   updateSize(e){
+    this.setState({
+      userInput: {
+        recipeName: this.state.userInput.recipeName,
+        size: e.target.value,
+        nicotine: this.state.userInput.nicotine
+      }
+    })
+  }
+
+    updateNicotine(e){
+    this.setState({
+      userInput: {
+        recipeName: this.state.userInput.recipeName,
+        size: this.state.userInput.size,
+        nicotine: e.target.value
+      }
+    })
+  }
+
+
 
   addIngredient(e){
     console.log('add new ingredient')
@@ -102,6 +138,34 @@ class App extends Component {
     })
   }
 
+
+//react function to fetch
+postRecipe() {
+    console.log('add recipe post')
+    fetch('/recipes', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        recipeName: this.state.userInput.recipeName,
+        size: this.state.userInput.size,
+        nicotine: this.state.userInput.nicotine
+      })
+    })
+    .then((data) => {
+      this.setState({
+        userInput: {
+        recipeName: '',
+        size: '',
+        nicotine: ''
+      }
+      })
+    })
+  }
+
+
+
   logout() {
     this.setState({
       currentToken: '',
@@ -130,6 +194,9 @@ class App extends Component {
 
             <RecipeForm
               ingredients={[]}
+              updateRecipeName={event => this.updateRecipeName(event)}
+              updateSize={event => this.updateSize(event)}
+              updateNicotine={event => this.updateNicotine(event)}
             />
 
         <div>

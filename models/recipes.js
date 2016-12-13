@@ -1,47 +1,48 @@
 const db = require('../db/db');
 
 
-
-// SELECT *FROM recipes
-//   INNER JOIN vape_users
-//     ON (recipes.belongs_to = vape_users.user_id);
-
-//link recipe to current password logged in? INNER JOIN?
+//working model?
 function getRecipes(req, res, next){
-  db.any(`SELECT * from recipes WHERE belongs_to =$1;`)
+  const user_id = req.user.user_id;
+  console.log(req.user);
+  db.any(`SELECT * from recipes WHERE user_id = $1;`, [user_id])
+  // db.any(`SELECT * from recipes;`)
     .then((recipes)=> {
       res.rows = recipes;
       next();
     })
-    .catch(error => next(error));
+    .catch((err) => {
+      console.log('*** getting all recipies error ***')
+    })
 };
 
 function addRecipe(req, res, next){
-  db.none(`INSERT INTO recipes() VALUES ($/value*/,$/value*here/,$/value*here/);`, req.body)
+  const user_id = req.user.user_id;
+  db.none(`INSERT INTO recipes(user_id, recipe_name, nicotine, size) VALUES ($1, $/recipeName/, $/nicotine/, $/size/);`,[user_id], req.body)
     .then(() => next())
     .catch((err) => {
       console.log('*** adding recipie error ***')
     })
 };
-
-function addIngredients(req, res, next){
-  db.none(`INSERT INTO ingredients(column, column, column, column) VALUES ($/value*here/,$/value*here/,$/value*here/) WHERE belongs_to = $1;`, req.body)
+function softDeleteRecipe(req, res, next) {
+  const user_id = req.user.user_id;
+  db.none(`UPDATE recipes SET soft_deleted = '2'
+            WHERE user_id = $1
+            AND recipe_name = $2;`,[user_id, req.body.recipeName] )
     .then(() => next())
     .catch((err) => {
-      console.log('*** adding ingredients error ***')
+      console.log('*** soft delete recipe error ***')
     })
-};
-
-function softDeleteRecipe(req, res, next) {
-  db.none(`UPDATE recipes SET soft_deleted = '2'
-            WHERE id = $/id/;`, req.body)
-    .then(() => next())
 };
 
 function hardDeleteRecipe(req, res, next) {
   db.none(`DELETE FROM recipes
-          WHERE id = $/id/;`, req.body)
+            WHERE user_id = $1
+            AND recipe_name = $2;`,[user_id, req.body.recipeName])
     .then(() => next())
+    .catch((err) => {
+      console.log('*** hard delete recipie error ***')
+    })
 };
 
 

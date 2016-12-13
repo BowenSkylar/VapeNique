@@ -1,0 +1,12 @@
+.signupBtn{
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  padding-left:40px;
+  padding-right:40px;
+  margin: 5px;
+}
+
+.signupBtn:hover{
+  background-color: #777;
+}

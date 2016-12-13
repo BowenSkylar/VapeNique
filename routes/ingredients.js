@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { createUser, authenticate } = require('../models/users.js')
-const { getRecipes, addRecipes, addIngredients, softDeleteRecipe, hardDeleteRecipe } = require('../models/api.js');
+const { getIngredients, addIngredients } = require('../models/ingredients.js');
 
 const sendResponse = (req, res) => res.json(res.data);
 const sessionErrorHandler = (err, req, res, next) => {
@@ -10,13 +10,8 @@ const sessionErrorHandler = (err, req, res, next) => {
   return res.json(res.data)
 }
 
-router.route('/recipes')
-  .put(softDeleteRecipe, (req, res) => res.sendStatus(204))
-  .post(addRecipes, (req, res) => res.sendStatus(204))
-  .get(getRecipes, sendResponse)
-  .delete(hardDeleteRecipe, (req, res) => res.sendStatus(204))
-
-router.route('/ingredients')
+router.route('/')
+  .get(getIngredients ,(req, res, next)=> res.json(res.ingredients))
   .post(addIngredients, (req, res) => res.sendStatus(204))
 
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import style from './Signup.css';
+
 
 class Signup extends Component {
   render() {
@@ -6,7 +8,7 @@ class Signup extends Component {
       <div>
         <input onChange={this.props.trackSignupForm} type="text" placeholder="username"/>
         <input onChange={this.props.trackSignupForm} type="text" placeholder="password"/>
-        <button onClick={this.props.postSignup}>Signup</button>
+        <button className="signupBtn" onClick={this.props.postSignup}>Signup</button>
       </div>
     )
   }

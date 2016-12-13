@@ -1,13 +1,13 @@
 input {
   background: transparent;
-  border-top: transparent !important;
-  border-left: transparent !important;
-  border-right: transparent !important;
-  border-bottom: 2px solid !important;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-bottom: 2px solid;
   font-weight: 200;
   color: grey;
   padding-left: 0;
-  box-shadow: none !important;
+  box-shadow: none;
   outline: none;
   padding: 10px;
 }
@@ -15,8 +15,8 @@ input {
 .recipeFormBox{
   margin: 20px;
   padding: 30px;
-  border-radius: 10px;
-  border: 5px solid #222;
+  border-radius: 20px;
+  border: 3px solid #222;
   width: 50vw;
 }
 
@@ -26,4 +26,19 @@ input {
   background-color: teal;
   color: white;
   margin-right: 15px;
+}
+
+.addRecipeBtn{
+  color: white;
+  background-color: teal;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  padding-left:40px;
+  padding-right:40px;
+  margin: 5px;
+}
+
+.addRecipeBtn:hover{
+  background-color: #006767;
 }
