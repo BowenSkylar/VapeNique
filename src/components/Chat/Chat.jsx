@@ -11,7 +11,7 @@ export default class Chat extends Component {
     // receive data from server through socket 'chatroom'
     const socket = io();
     socket.on('chatroom', msg => {
-      console.log('data on frontend', msg);
+      // console.log('data on frontend', msg);
       const ul = document.getElementById('messages');
       const li = document.createElement('li');
       // const username = document.querySelector('username');
@@ -48,7 +48,7 @@ export default class Chat extends Component {
           <ul id="messages"></ul>
         </div>
         <div className='socket-form'>
-            <button>Send</button>
+            <button>Send Message</button>
           <form onSubmit={event => this.handleSubmit(event)}>
             <input id="m" onChange={event => this.handleInputChange(event)}/>
           </form>

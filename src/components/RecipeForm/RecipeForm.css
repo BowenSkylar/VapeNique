@@ -21,7 +21,11 @@ input {
 }
 
 .addFlavor {
-  border-radius: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 150px;
   border: transparent;
   background-color: teal;
   color: white;

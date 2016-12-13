@@ -1,3 +1,4 @@
+/*webscket help from sang min na*/
 * {
   margin: 0;
   padding: 0;
@@ -42,7 +43,7 @@
 .socket-form {
   position: absolute;
   bottom: 0;
-  background: #222;
+  background: #444;
   padding: 3px;
   width: 80vw;
   border-bottom-left-radius: 8px;
@@ -78,6 +79,12 @@
   width: 80vw;
   height: 20vh;
 
+}
+
+#m{
+  background-color: #333;
+  margin-bottom: 15px;
+  border: 2px solid #222;
 }
 
 

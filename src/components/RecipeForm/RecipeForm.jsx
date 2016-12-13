@@ -69,7 +69,7 @@ class RecipeForm extends Component {
                 onClick={this.addIngredient.bind(this)}>+</button>add another ingredient <br/>
         {ingredientsForm}
         <button className="addRecipeBtn"
-                onClick="">Add to My Recipes</button>
+                onClick={this.props.postRecipe}>Add to My Recipes</button>
       </form>
     )
   }

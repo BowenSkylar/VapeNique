@@ -17,15 +17,17 @@ const io         = require('socket.io')(http);
 
 //socketIO help from Sang Min Na -> @smna15 = github
 io.on('connection', socket => {
-  console.log('a user connected');
+  console.log('*** A user just connected!!***');
   // receive msg from client through socket 'server-chat'
   socket.on('server-chat', msg => {
+    //preview of message
     console.log('chat: ' + msg);
+
     // broadcast msg received to all who are listening to socket 'chatroom'
     socket.broadcast.emit('chatroom', {msg : msg});
   });
 
-  socket.on('disconnect', () => console.log('user disconnected'));
+  socket.on('disconnect', () => console.log('***user disconnected :( ***'));
 });
 
 http.listen(PORT, () => console.log('listening on', PORT));
@@ -44,7 +46,7 @@ const recipeRouter = require('./routes/recipes.js');
 const ingredientRouter = require('./routes/ingredients.js');
 
 app.use('/user', userRouter);
-app.use('/recipes', recipeRouter);
+app.use('/db/recipes', recipeRouter);
 app.use('/ingredients', ingredientRouter);
 
 // app.listen(PORT, () => console.log('server here!! listening on', PORT));
