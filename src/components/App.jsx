@@ -6,8 +6,7 @@ import Login from './Login/Login.jsx';
 import Signup from './Signup/Signup.jsx';
 import RecipeForm from './RecipeForm/RecipeForm.jsx'
 import Chat from './Chat/Chat.jsx';
-
-
+import RecipeList from './RecipeList/RecipeList.jsx';
 
 // create a React Component called _App_
 class App extends Component {
@@ -15,6 +14,7 @@ class App extends Component {
     super();
 
     this.state = {
+    recipes:[],
     userInput: {
       recipeName: '',
       size: '',
@@ -60,8 +60,6 @@ class App extends Component {
       }
     })
   }
-
-
 
   addIngredient(e){
     console.log('add new ingredient')
@@ -136,6 +134,7 @@ class App extends Component {
         }
       }, () => {
         console.log(this.state)
+    this.getRecipes();
       })
     })
   }
@@ -164,25 +163,31 @@ postRecipe(event) {
         nicotine: ''
       }
       })
+      this.getRecipes()
     })
   }
 
+////////////////////////////////////////////////////////////////
 getRecipes() {
     console.log('getting all recipes for user')
     fetch('/db/recipes', {
-      method: 'GET',
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${this.state.currentToken}`
       }
     })
-    .then((data) => { console.log('successful GET for user');
-    })
+    .then(r => r.json())
+    .then((data) => {
+      console.log(data)
+      this.setState({
+        recipes:data
+      })
+    });
   }
 
 
 
-
+////////////////////////////////////////////////////////////////
   logout() {
     this.setState({
       currentToken: '',
@@ -216,6 +221,7 @@ getRecipes() {
               updateNicotine={event => this.updateNicotine(event)}
               postRecipe={event => this.postRecipe(event)}
               getRecipes={event => this.getRecipes()}
+              recipes={this.state.recipes}
             />
 
      <div className="socket-container">

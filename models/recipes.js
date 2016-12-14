@@ -5,10 +5,12 @@ const db = require('../db/db');
 function getRecipes(req, res, next){
   const user_id = req.user.user_id;
   console.log(req.user);
-  db.any(`SELECT * from recipes WHERE user_id = $1;`, [user_id])
+  db.any(`SELECT * from recipes WHERE user_id = $1;`,[user_id])
   // db.any(`SELECT * from recipes;`)
+    // .then(r=>r.json())
     .then((recipes)=> {
       res.rows = recipes;
+      console.log(recipes)
       next();
     })
     .catch((err) => {
@@ -20,10 +22,10 @@ function getRecipes(req, res, next){
 function addRecipe(req, res, next){
   const user_id = req.user.user_id;
   console.log(req.user);
-  db.none(`BEGIN;
+  db.none(`
           INSERT INTO recipes (user_id, recipe_name, nicotine, soft_deleted, size)
-          VALUES ($1, $2, $3, 1, $4);
-          COMMIT;`,[user_id, req.body.recipeName, req.body.nicotine, req.body.size])
+          VALUES ($1, $2, $3, $4, $5) returning *;
+          `,[user_id, req.body.recipeName, req.body.nicotine, 1, req.body.size])
   //INSERT INTO ingredients (flavor) VALUES ($5); COMMIT;
     .then(() => next())
     .catch((err) => {

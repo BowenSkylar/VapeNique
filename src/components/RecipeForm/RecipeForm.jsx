@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import style from './RecipeForm.css';
+import RecipeList from '../RecipeList/RecipeList.jsx'
 
 class RecipeForm extends Component {
   constructor(props){
     super(props);
-    this.state = {ingredients: this.props.ingredients}
+    this.state = {
+      ingredients: this.props.ingredients
+    }
   }
 
   addIngredient(){
@@ -26,6 +29,8 @@ class RecipeForm extends Component {
     this.setState(this.state)
   }
 
+
+
   render() {
     const ingredientsForm = this.state.ingredients.map((ingredient, i)=>(
       <Ingredient amount={ingredient.amount}
@@ -38,6 +43,7 @@ class RecipeForm extends Component {
 
 
     return(
+      <div className="bigmama">
       <div className="recipeFormBox">
       <form onSubmit="">
         Recipe Name: <input className="recipeNameInput"
@@ -72,6 +78,14 @@ class RecipeForm extends Component {
         {ingredientsForm}
         <button className="addRecipeBtn"
                 onClick={this.props.postRecipe}>Add to My Recipes</button>
+      </div>
+         <div className="personalRecipeFormBox">
+
+        <RecipeList
+            recipes={this.props.recipes}
+        />
+
+         </div>
       </div>
     )
   }
