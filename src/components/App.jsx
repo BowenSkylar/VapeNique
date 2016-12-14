@@ -167,6 +167,20 @@ postRecipe(event) {
     })
   }
 
+getRecipes() {
+    console.log('getting all recipes for user')
+    fetch('/db/recipes', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${this.state.currentToken}`
+      }
+    })
+    .then((data) => { console.log('successful GET for user');
+    })
+  }
+
+
 
 
   logout() {
@@ -201,6 +215,7 @@ postRecipe(event) {
               updateSize={event => this.updateSize(event)}
               updateNicotine={event => this.updateNicotine(event)}
               postRecipe={event => this.postRecipe(event)}
+              getRecipes={event => this.getRecipes()}
             />
 
      <div className="socket-container">

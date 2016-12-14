@@ -38,7 +38,8 @@ class RecipeForm extends Component {
 
 
     return(
-      <form onSubmit="" className="recipeFormBox">
+      <div className="recipeFormBox">
+      <form onSubmit="">
         Recipe Name: <input className="recipeNameInput"
                             type="text"
                             placeholder="Enter Recipe Name"
@@ -67,10 +68,11 @@ class RecipeForm extends Component {
 
         <button className="addFlavor"
                 onClick={this.addIngredient.bind(this)}>+</button>add another ingredient <br/>
+      </form>
         {ingredientsForm}
         <button className="addRecipeBtn"
                 onClick={this.props.postRecipe}>Add to My Recipes</button>
-      </form>
+      </div>
     )
   }
 }

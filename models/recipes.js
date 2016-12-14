@@ -20,14 +20,20 @@ function getRecipes(req, res, next){
 function addRecipe(req, res, next){
   const user_id = req.user.user_id;
   console.log(req.user);
-  db.none(`INSERT INTO recipes (user_id, recipe_name, nicotine, soft_deleted, size)
-          VALUES ($1, $2, $3, 1, $4);`,[user_id, req.body.recipeName, req.body.nicotine, req.body.size])
+  db.none(`BEGIN;
+          INSERT INTO recipes (user_id, recipe_name, nicotine, soft_deleted, size)
+          VALUES ($1, $2, $3, 1, $4);
+          COMMIT;`,[user_id, req.body.recipeName, req.body.nicotine, req.body.size])
+  //INSERT INTO ingredients (flavor) VALUES ($5); COMMIT;
     .then(() => next())
     .catch((err) => {
       console.log('*** adding recipie error ***')
     })
 };
 
+
+//loop fetch call
+//write model to take in ingredients  to enter ingredients
 function softDeleteRecipe(req, res, next) {
   const user_id = req.user.user_id;
   db.none(`UPDATE recipes SET soft_deleted = '2'

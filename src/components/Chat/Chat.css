@@ -7,7 +7,7 @@
 
 .message-popup {
   font: 13px Helvetica, Arial;
-  background-color: #f8f1db;
+  background-color: #999999;
   position: absolute;
   right: 1vw;
   bottom: 0;
@@ -75,7 +75,7 @@
 }
 
 .screen {
-  background-color: #A9A49DFF;
+  background-color: #888581FF;
   width: 80vw;
   height: 20vh;
 

@@ -48,9 +48,9 @@ export default class Chat extends Component {
           <ul id="messages"></ul>
         </div>
         <div className='socket-form'>
-            <button>Send Message</button>
           <form onSubmit={event => this.handleSubmit(event)}>
             <input id="m" onChange={event => this.handleInputChange(event)}/>
+            <button>Press Enter</button>
           </form>
         </div>
       </div>
