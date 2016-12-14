@@ -21,11 +21,16 @@ function getRecipes(req, res, next){
 // insert into recipes (user_id, recipe_name, nicotine, soft_deleted, size) values (2, 'liquid gold', 3, 1, 10);
 function addRecipe(req, res, next){
   const user_id = req.user.user_id;
+console.log(typeof req.body.recipeName)
+console.log(typeof req.body.nicotine)
+console.log(typeof req.body.size)
+console.log(typeof user_id)
   console.log(req.user);
   db.none(`
           INSERT INTO recipes (user_id, recipe_name, nicotine, soft_deleted, size)
-          VALUES ($1, $2, $3, $4, $5) returning *;
-          `,[user_id, req.body.recipeName, req.body.nicotine, 1, req.body.size])
+          VALUES ($1, $2, $3, $4, $5);`
+           ,[user_id, req.body.recipeName, parseInt(req.body.nicotine), '1', parseInt(req.body.size)])
+          // ,[9, 'tester', 30, '1', 50])
   //INSERT INTO ingredients (flavor) VALUES ($5); COMMIT;
     .then(() => next())
     .catch((err) => {

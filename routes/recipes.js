@@ -11,8 +11,8 @@ const sessionErrorHandler = (err, req, res, next) => {
 }
 
 router.route('/')
-  .get(getRecipes, (req, res) => res.json(res.rows))
   .post(addRecipe, (req, res) => res.sendStatus(204))
+  .get(getRecipes, (req, res) => res.json(res.rows))
   // .put(softDeleteRecipe, (req, res) => res.sendStatus(204))
   // .delete(hardDeleteRecipe, (req, res) => res.sendStatus(204))
 
