@@ -8,8 +8,7 @@ const jwt         = require('jsonwebtoken');
 const expressJWT  = require('express-jwt');
 const bcrypt      = require('bcryptjs');
 const app         = express();
-const PORT        = process.argv[2] || process.env.port || 3000;
-
+const PORT = process.argv[ 2 ] || process.env.PORT || 3000;
 // socket.io
 const http       = require('http').Server(app);
 const io         = require('socket.io')(http);
@@ -22,6 +21,11 @@ io.on('connection', socket => {
   socket.on('server-chat', msg => {
     //preview of message
     console.log('chat: ' + msg);
+
+
+if (process.env.NODE_ENV == 'development') require('dotenv').config({
+silent: true });
+
 
     // broadcast msg received to all who are listening to socket 'chatroom'
     socket.broadcast.emit('chatroom', {msg : msg});
