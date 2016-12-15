@@ -184,10 +184,25 @@ getRecipes() {
       })
     });
   }
-
-
-
 ////////////////////////////////////////////////////////////////
+
+deleteRecipe(event) {
+    console.log('deleting recipe for user')
+    fetch('/db/recipes', {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${this.state.currentToken}`
+      }
+    })
+  }
+
+
+
+
+
+
+
   logout() {
     this.setState({
       currentToken: '',
@@ -223,6 +238,7 @@ getRecipes() {
               postRecipe={event => this.postRecipe(event)}
               getRecipes={event => this.getRecipes()}
               recipes={this.state.recipes}
+              deleteRecipe={event => this.deleteRecipe(event)}
             />
 {/*WEB SOCKET HELP COURTSEY TO SANG MIN NA*/}
      <div className="socket-container">

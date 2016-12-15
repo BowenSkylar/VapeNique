@@ -83,6 +83,7 @@ class RecipeForm extends Component {
 
         <RecipeList
             recipes={this.props.recipes}
+            deleteRecipe={this.props.deleteRecipe}
         />
 
          </div>
