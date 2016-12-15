@@ -1,18 +1,25 @@
 input {
+  color: #222;
+  outline: none;
+  padding: 5px;
+  box-shadow: none;
   background: transparent;
   border-top: transparent;
   border-left: transparent;
+  font-weight: 300;
+  padding-left: 6px;
   border-right: transparent;
   border-bottom: 2px solid;
-  font-weight: 200;
-  color: grey;
-  padding-left: 0;
-  box-shadow: none;
-  outline: none;
-  padding: 10px;
+  margin: 2px;
 }
+
+::-webkit-input-placeholder {
+   color: #823D25;
+   opacity: .7;
+}
+
 .bigmama{
-display: inline-block;
+  display: inline-block;
 }
 
 .recipeFormBox{
@@ -31,24 +38,26 @@ display: inline-block;
   padding-bottom: 5px;
   border-radius: 150px;
   border: transparent;
-  background-color: teal;
+  background-color: #609680;
   color: white;
   margin-right: 15px;
 }
 
 .addRecipeBtn{
   color: white;
-  background-color: teal;
+  background-color: #609680;
   border-radius: 15px;
   border: none;
   padding: 10px;
   padding-left:40px;
   padding-right:40px;
   margin: 5px;
+  margin-top: 30px;
+  outline: none;
 }
 
 .addRecipeBtn:hover{
-  background-color: #006767;
+  background-color: #608A80;
 }
 
 
@@ -60,3 +69,27 @@ display: inline-block;
   width: 45vw;
   float: right;
 }
+
+.addRecipeBtn:active{
+  outline: none;
+  animation: pulse .3s;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(.90, .90, .90);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+}
+

@@ -7,18 +7,15 @@
 
 .message-popup {
   font: 13px Helvetica, Arial;
-  background-color: #999999;
+  background-color: #222;
   position: absolute;
-  right: 1vw;
+  right: .1vw;
   bottom: 0;
   z-index: 50;
   display: none;
-/*  border: 2px solid tan;*/
   position: fixed;
-  bottom: 2vh;
-  left: .5vw;
-  width: 80vw;
-  height: 28vh;
+  width: 55vw;
+  height: 62vh;
   border-radius: 8px;
 
 }
@@ -26,12 +23,12 @@
 .message-header {
   text-align: right;
   padding-right: 1.2vw;
-  background-color:teal;
+  background-color:#253D4C;
   color: #FAFAFA;
   font-size: 1vw;
   font-weight: bold;
   height: 3vh;
-  width: 80vw;
+  width: 55vw;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -45,7 +42,7 @@
   bottom: 0;
   background: #444;
   padding: 3px;
-  width: 80vw;
+  width: 55vw;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -53,7 +50,7 @@
 .socket-form input {
   border: 0;
   padding: 10px;
-  width: 65vw;
+  width: 50vw;
   height: 5vh;
   margin-right: .5%;
 }
@@ -61,7 +58,7 @@
 
 .socket-form button {
   width: 4.8vw;
-  background-color: teal;
+  background-color: #253D4C;
   border: none;
   padding: 8px;
   border-radius: 8px;
@@ -70,26 +67,26 @@
 }
 
 .socket-form button :hover {
-  background-color: #006767;
+  background-color: #1F3340;
 
 }
 
 .screen {
   background-color: #888581FF;
-  width: 80vw;
+  width: 55vw;
   height: 20vh;
 
 }
 
 #m{
-  background-color: #333;
+  background-color: #888;
   padding-bottom: 25px;
   border: 2px solid #222;
 }
 
 
 #messages {
-  width: 80vw;
+  width: 55vw;
   height: 20vh;
   overflow: scroll;
   list-style-type: none;
@@ -98,12 +95,12 @@
 }
 
 #messages li {
-  width: 80vw;
+  width: 55vw;
   padding: 5px 10px;
-  background: #FFFFFF;
+  background: #E5E5E5;
 }
 
 #messages li:nth-child(odd) {
-  width: 80vw;
-  background: #eee;
+  width: 55vw;
+  background: #999;
 }

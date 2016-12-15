@@ -1,26 +1,33 @@
 .logoutBtn, .loginBtn{
-  border-radius: 15px;
+  margin: 5px;
   border: none;
   outline: none;
   padding: 10px;
   padding-left:40px;
   padding-right:40px;
-
-  margin: 5px;
+  border-radius: 15px;
+  letter-spacing: 2px;
 }
-.loginBtn:hover{
-  background-color: #777;
-}
-
-.loginBtn
 
 .logoutBtn{
+color: #fafafa;
 float: right;
+background-color: #B05232;
+}
+
+.loginBtn{
+  color: #fafafa;
+  background-color: #253D4C;
+  padding-right: 50px;
+}
+
+.loginBtn:hover{
+  background-color: #1F3340;
 }
 
 
 .logoutBtn:hover{
-  background-color: #777;
+  background-color: #94452A;
 }
 
 

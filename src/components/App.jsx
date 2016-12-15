@@ -108,7 +108,6 @@ class App extends Component {
           username: '',
           password: ''
         }
-      .then(ComponentWillUnmount();)
       })
     })
   }
@@ -201,6 +200,7 @@ getRecipes() {
       <div id="app-container">
         <header>
           <h1>Welcome to VapeNique</h1>
+            {/*<h5>Home of Your Personal E-Juice Recipes!</h5>*/}
 
 
             <Signup

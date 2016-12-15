@@ -4,18 +4,26 @@
 }
 
 header {
-  background-color: #393939;
-  padding: 20px;
+  background-color: #C95E3A;
+  padding: 30px;
 }
 
 header h1 {
   color: #FAFAFA;
   margin: 0;
-  font-family: sans-serif;
+  font-size: 5em;
+  text-shadow: 3px 1px 2px #222;
 }
 
+/*h5{
+  color: #823D25;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 5px;
+}*/
+
 #description-body {
-  padding: 20px;
+  padding: 30px;
 }
 
 /*#app-container{
@@ -42,11 +50,11 @@ body{
   width: 16vw;
   height: 4vh;
   text-align: center;
-  background-color: teal;
+  background-color: #609680;
 }
 
 #open-chat:hover{
-  background-color: #006767;
+  background-color: #608A80;
 }
 
 #open-chat:active{
@@ -59,7 +67,7 @@ body{
   }
 
   50% {
-    transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.02, 1.02, 1.02);
   }
 
   to {

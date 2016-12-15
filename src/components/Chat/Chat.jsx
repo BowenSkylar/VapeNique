@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Chat.css';
-
+//socket io help from sang min na
 export default class Chat extends Component {
 
   componentWillMount() {
@@ -42,7 +42,7 @@ export default class Chat extends Component {
         <div
         className="message-header"
         onClick={()=>{document.querySelector('.message-popup').style.display = "none"}}
-        ><span>×</span>
+        ><span>close ×</span>
         </div>
         <div className="screen">
           <ul id="messages"></ul>
@@ -50,7 +50,6 @@ export default class Chat extends Component {
         <div className='socket-form'>
           <form onSubmit={event => this.handleSubmit(event)}>
             <input id="m" onChange={event => this.handleInputChange(event)}/>
-            <button>Press Enter</button>
           </form>
         </div>
       </div>
