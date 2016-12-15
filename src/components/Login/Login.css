@@ -1,8 +1,8 @@
 .logoutBtn, .loginBtn{
   border-radius: 15px;
   border: none;
-/*  outline: none;
-*/  padding: 10px;
+  outline: none;
+  padding: 10px;
   padding-left:40px;
   padding-right:40px;
 
@@ -12,6 +12,8 @@
   background-color: #777;
 }
 
+.loginBtn
+
 .logoutBtn{
 float: right;
 }
@@ -19,4 +21,33 @@ float: right;
 
 .logoutBtn:hover{
   background-color: #777;
+}
+
+
+.loginBtn:active{
+  animation: pulse .3s;
+  outline: none;
+}
+
+.logoutBtn:active{
+  animation: pulse .3s;
+  outline: none;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
 }

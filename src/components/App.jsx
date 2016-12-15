@@ -1,4 +1,3 @@
-// import the libs we need
 import React, { Component } from 'react';
 import './normalize.css';
 import style from './App.css';
@@ -7,7 +6,7 @@ import Signup from './Signup/Signup.jsx';
 import RecipeForm from './RecipeForm/RecipeForm.jsx'
 import Chat from './Chat/Chat.jsx';
 import RecipeList from './RecipeList/RecipeList.jsx';
-
+//user authentication help from Dan Pease
 // create a React Component called _App_
 class App extends Component {
   constructor() {
@@ -65,6 +64,7 @@ class App extends Component {
     console.log('add new ingredient')
   }
 
+//user authentication help from Dan Pease
   trackSignupForm(e) {
     let fieldsArr = e.target.parentElement.childNodes
     //skylar pls remember to consolelog fieldsArr
@@ -108,6 +108,7 @@ class App extends Component {
           username: '',
           password: ''
         }
+      .then(ComponentWillUnmount();)
       })
     })
   }
@@ -223,7 +224,7 @@ getRecipes() {
               getRecipes={event => this.getRecipes()}
               recipes={this.state.recipes}
             />
-
+{/*WEB SOCKET HELP COURTSEY TO SANG MIN NA*/}
      <div className="socket-container">
           <Chat username={this.state.loginForm.username}/>
         </div>
@@ -246,5 +247,6 @@ getRecipes() {
     );
   }
 }
+
 
 export default App;

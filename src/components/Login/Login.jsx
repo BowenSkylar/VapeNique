@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './Login.css';
 
-
+//user authentication help from Dan Pease
 class Login extends Component {
   render() {
     return(
