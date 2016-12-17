@@ -7,7 +7,7 @@ const salt = 10;
 function createUser(req, res, next) {
   console.log(req.body)
   db.none('INSERT INTO vape_users (username, password) VALUES ($1, $2);',
-    [req.body.username, bcrypt.hashSync(req.body.password, salt)])
+    [req.body.username, (req.body.password, salt)])
     .then( () => {
       console.log('user created!')
       next()
@@ -22,7 +22,7 @@ function authenticate(req, res, next) {
   db.one('SELECT * FROM vape_users WHERE username = $/username/;', req.body)
     .then((data) => {
       console.log(data.password)
-      const match = bcrypt.compareSync(req.body.password, data.password);
+      const match = (req.body.password, data.password);
       if (match) {
         const myToken = jwt.sign({ username: req.body.username, user_id: data.user_id }, process.env.SECRET);
         res.status(200).json(myToken);
