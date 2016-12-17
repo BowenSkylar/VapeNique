@@ -1,4 +1,4 @@
-const db = require('../db/db');
+const db = require('../models/db');
 
 function getIngredients(req, res, next) {
   db.any(`SELECT * from ingredients`)
