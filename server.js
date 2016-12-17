@@ -12,7 +12,7 @@ const expressJWT  = require('express-jwt');
 const bcrypt      = require('bcryptjs');
 const app         = express();
 const PORT = process.argv[ 2 ] || process.env.PORT || 3000;
-// socket.io
+// socket.io SANG MIN NA
 const http       = require('http').Server(app);
 const io         = require('socket.io')(http);
 
