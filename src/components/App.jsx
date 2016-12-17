@@ -121,7 +121,8 @@ class App extends Component {
       },
       body: JSON.stringify({
         username: this.state.loginForm.username,
-        password: this.state.loginForm.password
+        password: this.state.loginForm.password,
+        currentToken: ''
       })
     })
     .then(r => r.json())
