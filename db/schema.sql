@@ -29,7 +29,6 @@ CREATE TABLE recipes_ingredients(
   recipe_id INT REFERENCES recipes, --refrence to recipe id
   ingredient_id INT REFERENCES ingredients, --ingredient id
   measurements TEXT NOT NULL --measurement of ingredient
-
 );
 
 COMMIT;
