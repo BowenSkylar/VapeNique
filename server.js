@@ -1,5 +1,8 @@
 'use strict'
-require('dotenv').config({ silent: true });
+
+if (process.env.NODE_ENV == 'development') require('dotenv').config({
+silent: true });
+
 const bodyParser  = require('body-parser');
 const express     = require('express');
 const logger      = require('morgan');
@@ -23,8 +26,7 @@ io.on('connection', socket => {
     console.log('chat: ' + msg);
 
 
-if (process.env.NODE_ENV == 'development') require('dotenv').config({
-silent: true });
+
 
 
     // broadcast msg received to all who are listening to socket 'chatroom'
