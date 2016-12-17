@@ -49,10 +49,10 @@ app.use(expressJWT({secret: process.env.SECRET}).unless({
 
 const userRouter = require('./routes/users.js');
 const recipeRouter = require('./routes/recipes.js');
-const ingredientRouter = require('./routes/ingredients.js');
+// const ingredientRouter = require('./routes/ingredients.js');
 
 app.use('/user', userRouter);
 app.use('/db/recipes', recipeRouter);
-app.use('/ingredients', ingredientRouter);
+// app.use('/ingredients', ingredientRouter);
 
 // app.listen(PORT, () => console.log('server here!! listening on', PORT));
