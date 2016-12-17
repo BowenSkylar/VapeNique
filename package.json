@@ -3,18 +3,18 @@
   "version": "1.0.0",
   "description": "React application using webpack for a vape recipe organizer",
   "main": "server.js",
-    "engines":{
-      "node":"6.6.0"
-    },
+  "engines": {
+    "node": "6.6.0"
+  },
   "private": true,
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
-    "heroku-prebuild" : "bash ./scripts/deployment_react.sh",
-    "heroku-postbuild" : "bash ./scripts/deployment_cleanup.sh",
+    "heroku-prebuild": "bash ./scripts/deployment_react.sh",
+    "heroku-postbuild": "bash ./scripts/deployment_cleanup.sh",
     "start": "node server.js",
     "rebuild": "webpack -d --progress --colors",
     "watch": "webpack -d --progress --watch",
-    "test" : "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/BowenSkylar/VapeNique#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "morgan": "^1.7.0",
