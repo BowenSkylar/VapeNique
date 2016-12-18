@@ -1,4 +1,5 @@
 # VapeNique
+Check it out here, now deployed on --> https://vapenique.herokuapp.com/
 ***
 ## Concept:
 The ‘VapeNique’ app concept consist of a personal library of your own generated vape juice recipes. This app will include a calculator to insure a user is using the correct measurements necessary for different bottle sizes, and different nicotine levels. These homemade recipes will be saved to each individual user in their concoctions profile. Along with options to improve or remove individual recipes, a built in Flavor Chat to collaborate recipes with users, company flavorings, and general talk with fellow e-juice creators.
