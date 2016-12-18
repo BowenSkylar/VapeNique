@@ -199,11 +199,6 @@ deleteRecipe(event) {
   }
 
 
-
-
-
-
-
   logout() {
     this.setState({
       currentToken: '',
