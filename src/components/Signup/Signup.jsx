@@ -10,7 +10,9 @@ class Signup extends Component {
   render() {
     return(
       <div>
-        <h4>Instructions:Please Log in with Username: yo & Password: yo</h4>
+        <h4>Instructions: <br/>
+        Please Log in with <br/>
+        Username: yo & Password: yo</h4>
       </div>
     )
   }
