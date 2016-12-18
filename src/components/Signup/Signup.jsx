@@ -6,7 +6,7 @@ class Signup extends Component {
   render() {
     return(
       <div>
-      <h4>Instructions: Please Login In Using , Username : yo Password :yo<h4>
+      <h4>Instructions: Please Login In Using , Username : yo Password :yo</h4>
       </div>
     )
   }
