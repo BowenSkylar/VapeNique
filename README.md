@@ -45,6 +45,10 @@ User Login
 ## Wireframes:
 ![wireframep4](https://git.generalassemb.ly/storage/user/66/files/567f56ec-bd37-11e6-9fa7-13a38a1d3310)
 ***
+## ERDs:
+![fullsizerender](https://cloud.githubusercontent.com/assets/20446304/21297740/23486308-c553-11e6-98b7-b2ac7ad1ff69.jpg)
+
+***
 ## Timetable:
 
 - Dec-7: Setting up database schema and component structure.
@@ -64,3 +68,13 @@ User Login
 - Time Management
 - Data Base Issues
 - Deployment
+
+***
+## SPECIAL THANKS TO:
+- @daniel-j-pease
+- @smna15
+- @vdigregorio
+- @Dzeig
+- @teikmeout
+- @mgershowitz
+- @rapala61
