@@ -6,18 +6,12 @@ class Signup extends Component {
   render() {
     return(
       <div>
-      <h4>Instructions: Please Login In Using </br>
-      Username : yo </br>
-      Password :yo</h4>
+        <input onChange={this.props.trackSignupForm} type="text" placeholder="Desired Username"/>
+        <input onChange={this.props.trackSignupForm} type="text" placeholder="Desired Password"/>
+        <button className="signupBtn" onClick={this.props.postSignup}>Sign Up</button>
       </div>
     )
   }
 }
 
 export default Signup;
-
-
-
-// <input onChange={this.props.trackSignupForm} type="text" placeholder="Desired Username"/>
-// <input onChange={this.props.trackSignupForm} type="text" placeholder="Desired Password"/>
-// <button className="signupBtn" onClick={this.props.postSignup}>Sign Up</button>
