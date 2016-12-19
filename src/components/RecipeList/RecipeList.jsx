@@ -13,9 +13,10 @@ showRecipe() {
 return this.props.recipes.map((recipe,i) =>
     <RecipeItem
       key={i}
-      recipe_name = {recipe.recipe_name}
-      nicotine ={recipe.nicotine}
-      size ={recipe.size}
+      recipe_name={recipe.recipe_name}
+      nicotine={recipe.nicotine}
+      size={recipe.size}
+      deleteRecipe={this.props.deleteRecipe}
     />);
 }
 
