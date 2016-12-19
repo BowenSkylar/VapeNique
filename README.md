@@ -13,8 +13,8 @@ The ‘VapeNique’ app concept consist of a personal library of your own genera
 *** 
 
 ## User Login
-- Username = yo
-- Password = yo
+- Username = taco
+- Password = taco
 
 ***
 
