@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 
 const salt = 10;
 
+
 function createUser(req, res, next) {
   console.log(req.body)
   db.none('INSERT INTO vape_users (username, password) VALUES ($1, $2);',
